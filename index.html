@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr zara dental clinic | Healthcare in Lahore</title>
+    <style>
+        :root {
+            --color-primary: #0f766e;
+            --color-secondary: #0f172a;
+            --color-accent: #f59e0b;
+            --color-background: #ffffff;
+            --color-text: #333333;
+            --color-light-gray: #f0f0f0;
+            --color-dark-gray: #555555;
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--color-text);
+            background-color: var(--color-background);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+            scroll-margin-top: 90px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            color: var(--color-secondary);
+        }
+
+        h2 {
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--color-secondary);
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--color-accent);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-accent);
+            color: var(--color-secondary);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--color-primary);
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        /* Navigation */
+        nav {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: var(--color-secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: var(--color-secondary);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-primary);
+        }
+
+        .nav-cta {
+            margin-left: 20px;
+        }
+
+        /* Hero Section */
+        #hero {
+            background-color: var(--color-light-gray);
+            padding: 100px 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #hero .container {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
+            align-items: center;
+            gap: 48px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 640px;
+        }
+
+        .hero-content h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            color: var(--color-secondary);
+        }
+
+        .hero-content p {
+            font-size: 1.2em;
+            color: var(--color-dark-gray);
+            margin-bottom: 30px;
+        }
+
+        .hero-visual {
+            position: relative;
+            width: 100%;
+            max-width: 520px;
+            justify-self: end;
+            overflow: visible;
+            z-index: 1;
+        }
+
+        .hero-visual img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Abstract Shapes */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--color-primary) 0%, rgba(15, 118, 110, 0) 70%);
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, var(--color-accent) 0%, rgba(245, 158, 11, 0) 70%);
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        /* About Section */
+        #about {
+            background-color: #ffffff;
+        }
+
+        #about .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-content h2 {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .about-visual {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .about-visual img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Services Grid Section */
+        #services_grid {
+            background-color: var(--color-light-gray);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .service-card .icon {
+            font-size: 2.5em;
+            color: var(--color-primary);
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .service-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: var(--color-secondary);
+        }
+
+        /* FAQ Accordion Section */
+        #faq_accordion {
+            background-color: #ffffff;
+        }
+
+        .faq-item {
+            border: 1px solid var(--color-light-gray);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background-color: var(--color-light-gray);
+            padding: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            position: relative;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 20px;
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active::after {
+            content: '-';
+            transform: rotate(0deg);
+        }
+
+        .faq-answer {
+            padding: 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background-color: #ffffff;
+        }
+
+        .faq-answer p {
+            margin-bottom: 0;
+        }
+
+        /* CTA Section */
+        #cta {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            color: #ffffff;
+            text-align: center;
+        }
+
+        #cta h2 {
+            color: #ffffff;
+            margin-bottom: 30px;
+        }
+
+        #cta p {
+            font-size: 1.1em;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .cta-buttons .btn-primary {
+            background-color: var(--color-accent);
+            color: var(--color-secondary);
+        }
+
+        .cta-buttons .btn-primary:hover {
+            background-color: #ffffff;
+            color: var(--color-primary);
+        }
+
+        .cta-buttons .btn-secondary {
+            border-color: #ffffff;
+            color: #ffffff;
+        }
+
+        .cta-buttons .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: var(--color-light-gray);
+        }
+
+        #contact .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 50px;
+        }
+
+        .contact-info, .contact-form {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .contact-info h3, .contact-form h3 {
+            margin-bottom: 25px;
+            color: var(--color-secondary);
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-info .icon {
+            color: var(--color-primary);
+            font-size: 1.2em;
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            padding: 12px;
+            border: 1px solid var(--color-light-gray);
+            border-radius: 5px;
+            font-family: var(--font-family);
+            font-size: 1em;
+        }
+
+        .contact-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .contact-form .btn-primary {
+            align-self: flex-start;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--color-secondary);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        footer .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-nav a {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-nav a:hover {
+            color: #ffffff;
+        }
+
+        .copyright {
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 900px) {
+            h1 {
+                font-size: 2.8em;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            nav .container {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .logo {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                gap: 15px;
+            }
+
+            .nav-cta {
+                margin-left: 0;
+                margin-top: 15px;
+            }
+
+            #hero .container,
+            .hero .container,
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content {
+                text-align: center;
+            }
+
+            .hero-visual {
+                justify-self: stretch;
+                max-width: 100%;
+                margin-top: 40px;
+            }
+
+            .hero::before, .hero::after {
+                display: none;
+            }
+
+            #about .container {
+                flex-direction: column;
+            }
+
+            .about-content, .about-visual {
+                flex: none;
+                width: 100%;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-info, .contact-form {
+                padding: 30px;
+            }
+
+            footer .container {
+                flex-direction: column;
+            }
+
+            .copyright {
+                order: 1;
+            }
+
+            .footer-nav {
+                order: 2;
+                margin-top: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.2em;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.85em;
+            }
+
+            .hero-content h1 {
+                font-size: 3em;
+            }
+
+            .hero-content p {
+                font-size: 1em;
+            }
+
+            .service-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <div class="logo">Dr zara dental clinic</div>
+            <div class="nav-links">
+                <a href="#hero">Hero</a>
+                <a href="#about">About</a>
+                <a href="#services_grid">Services Grid</a>
+                <a href="#faq_accordion">Faq Accordion</a>
+                <a href="#cta">Cta</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="nav-cta">
+                <a href="#contact" class="btn btn-primary">Request a Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <header id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Dr zara dental clinic — Healthcare</h1>
+                <p>Professional Healthcare services.</p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn-primary">Request a Quote</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Us</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <img src="https://via.placeholder.com/520x400/0f766e/ffffff?text=Business+Image" alt="Business Visual">
+            </div>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <div class="about-content">
+                <h2>About Dr zara dental clinic</h2>
+                <p>We are a leading provider of Healthcare solutions, dedicated to helping our clients achieve their goals. With years of experience and a commitment to excellence, we deliver tailored services that drive success.</p>
+                <p>Our team of experts is passionate about innovation and client satisfaction. We believe in building strong, lasting relationships based on trust and mutual respect.</p>
+            </div>
+            <div class="about-visual">
+                <img src="https://via.placeholder.com/500x400/0f172a/ffffff?text=About+Us" alt="About Us Image">
+            </div>
+        </div>
+    </section>
+
+    <section id="services_grid">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon">★</div>
+                    <h3>Consultation</h3>
+                    <p>Expert consultation to understand your needs and provide strategic guidance.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">★</div>
+                    <h3>Core Services</h3>
+                    <p>Comprehensive Healthcare solutions designed for your success.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">★</div>
+                    <h3>Inquiry Handling</h3>
+                    <p>Efficient and responsive handling of all your inquiries and support needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq_accordion">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <div class="faq-question">What makes Dr zara dental clinic unique?</div>
+                <div class="faq-answer">
+                    <p>We pride ourselves on our client-centric approach, innovative solutions, and a dedicated team committed to delivering exceptional results.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How can I get started?</div>
+                <div class="faq-answer">
+                    <p>Getting started is easy! Simply click the 'Request a Quote' button or visit our Contact section to get in touch with our team.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Do you offer custom solutions?</div>
+                <div class="faq-answer">
+                    <p>Yes, we specialize in creating custom solutions tailored to the specific needs and objectives of each client.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cta">
+        <div class="container">
+            <h2>Ready to Elevate Dr zara dental clinic?</h2>
+            <p>Let us help you achieve your business goals with our expert Healthcare solutions.</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Request a Quote</a>
+                <a href="#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                <p><span class="icon">&#9990;</span> Phone: </p>
+                <p><span class="icon">&#64;</span> Email: </p>
+                <p><span class="icon">&#128222;</span> WhatsApp: </p>
+                <p><span class="icon">&#127968;</span> Location: </p>
+            </div>
+            <div class="contact-form">
+                <h3>Send Us a Message</h3>
+                <form action="#" method="post">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-nav">
+                <a href="#hero">Hero</a>
+                <a href="#about">About</a>
+                <a href="#services_grid">Services Grid</a>
+                <a href="#faq_accordion">Faq Accordion</a>
+                <a href="#cta">Cta</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="copyright">&copy; 2026 Dr zara dental clinic. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const faqAnswer = item.nextElementSibling;
+                item.classList.toggle('active');
+                if (item.classList.contains('active')) {
+                    faqAnswer.style.maxHeight = faqAnswer.scrollHeight + 'px';
+                } else {
+                    faqAnswer.style.maxHeight = null;
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
